@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp</title>
 
+    <link rel="shortcut icon" href="img/question-mark-1_10.jpg" type="image/x-icon">
+
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">QuizApp</span>
@@ -27,36 +30,53 @@
                     <img src="img/question-mark-2.jpg" class="img-fluid rounded-start">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4">Frage</h5>
+                    <div class="progress" role="progressbar">
+                        <div id="progress-bar" class="progress-bar" style="width: 0%">0 %</div>
+                    </div>
 
-                        <div class="card mb-2 border-primary">
-                            <div class="card-body">
+                    <div id="question-body" class="card-body">
+                        <h5 id="question-text" class="card-title mb-4">Frage</h5>
+
+                        <div class="card mb-2 border-primary answer-option" onclick="answer('option-0')">
+                            <div id="option-0" class="card-body">
                                 This is some text within a card body.
                             </div>
                         </div>
 
-                        <div class="card mb-2 border-primary">
-                            <div class="card-body">
+                        <div class="card mb-2 border-primary answer-option" onclick="answer('option-1')">
+                            <div id="option-1" class="card-body">
                                 This is some text within a card body.
                             </div>
                         </div>
 
-                        <div class="card mb-2 border-primary">
-                            <div class="card-body">
+                        <div class="card mb-2 border-primary answer-option" onclick="answer('option-2')">
+                            <div id="option-2" class="card-body">
                                 This is some text within a card body.
                             </div>
                         </div>
 
-                        <div class="card mb-2 border-primary">
-                            <div class="card-body">
+                        <div class="card mb-2 border-primary answer-option" onclick="answer('option-3')">
+                            <div id="option-3" class="card-body">
                                 This is some text within a card body.
                             </div>
                         </div>
 
                         <div class="quiz-footer mt-4">
-                            <span>Frage <b>1</b> von <b>5</b></span>
-                            <button type="button" class="btn btn-danger">Nächste Frage</button>
+                            <span>Frage <b id="question-counter">1</b> von <b id="questions-total">5</b></span>
+                            <button id="next-button" type="button" class="btn btn-danger" onclick="nextQuestion()"
+                                disabled>Nächste
+                                Frage</button>
+                        </div>
+
+                    </div>
+
+                    <div id="endscreen-body" class="card-body" style="display: none;">
+                        <div class="endcircle">
+                            <img src="img/Group 5.png">
+                            <span>Quiz abgeschlossen!</span>
+                            <span id="result">10/10 Punkten</span>
+                            <button id="play-again" type="button" class="btn btn-danger" onclick="restart()">Nochmal
+                                spielen</button>
                         </div>
                     </div>
                 </div>
