@@ -9,36 +9,6 @@ const questions = [
         ],
         "answer": 1
     },
-    // {
-    //     "text": "Welches Element wird verwendet, um eine geordnete Liste in HTML zu erstellen?",
-    //     "options": [
-    //         "'<ul>'",
-    //         "'<li>'",
-    //         "'<ol>'",
-    //         "'<list>'"
-    //     ],
-    //     "answer": 2
-    // },
-    // {
-    //     "text": "Welches Tag wird verwendet, um eine Überschrift im HTML-Dokument zu definieren?",
-    //     "options": [
-    //         "'<h1>'",
-    //         "'<title>'",
-    //         "'<head>'",
-    //         "'<body>'"
-    //     ],
-    //     "answer": 0
-    // },
-    // {
-    //     "text": "Welches Element wird verwendet, um einen Link in HTML zu erstellen?",
-    //     "options": [
-    //         "'<a>'",
-    //         "'<link>'",
-    //         "'<href>'",
-    //         "'<url>'"
-    //     ],
-    //     "answer": 0
-    // },
     {
         "text": "Was bedeutet das Akronym DOM?",
         "options": [
